@@ -1,0 +1,24 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int strStr(final String A, final String B) {
+        if(A.length()==0||B.length()==0)
+            return -1;
+        int i=0;
+        int j=0;
+        int cur=0;
+        while(i<A.length()){
+            if(A.charAt(i)==B.charAt(j)){
+                cur=j==0?i:cur;
+                j++;
+                i++;
+            }
+            else{
+                i=j!=0?(cur+1):++i;
+                j=0;
+            }
+            if(B.length()==j)
+                return cur;
+        }
+        return -1;
+    }
+}

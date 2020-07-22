@@ -1,0 +1,15 @@
+public class Solution {
+    public int isPalindrome(int A) {
+        if(A<0)
+            return 0;
+        int temp=A,rev=0;
+        while(temp!=0){
+            rev=rev*10+temp%10;
+            temp/=10;
+        }
+        if(rev==A)
+            return 1;
+        else 
+            return 0;
+    }
+}

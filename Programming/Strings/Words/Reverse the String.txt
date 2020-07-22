@@ -1,0 +1,13 @@
+public class Solution {
+    public String solve(String A) {
+        Stack<Character> st=new Stack<>();
+        for(char c:A.toCharArray())
+            st.push(c);
+        StringBuilder sb=new StringBuilder("");
+        while(!st.isEmpty())
+        {
+            sb.append(st.pop());
+        }
+        return sb.toString();
+    }
+}

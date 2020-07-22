@@ -1,0 +1,16 @@
+public class Solution {
+    public int pow(int x, int n, int d) {
+        long a=x,out=1;
+        while (n > 0) {
+            if (n % 2 == 1) {
+                out *= a;
+                out %= d;
+            }
+            a *= a;
+            a %= d;
+            n = n >> 1;
+        }
+        out = (out + d) % d;
+        return (int) out;
+    }
+}
